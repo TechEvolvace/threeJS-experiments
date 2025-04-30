@@ -32,5 +32,13 @@ scene.add( cube );
 // Set camera farther out enough to see cube
 camera.position.z = 5;
 
-// Render the scene
-renderer.render(scene, camera);
+// Displays the rotating cube
+function animateCubeRotation() {
+    // Make the cube rotate
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+    // Renders the scene
+    renderer.render( scene, camera );
+}
+
+renderer.setAnimationLoop ( animateCubeRotation );
